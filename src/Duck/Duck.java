@@ -1,35 +1,23 @@
 package Duck;
 
-public class Duck {
-    private String name;
-    private double weight;
+public abstract class Duck {
+    QuackBehavior quackBehavior;
+    FlyBehavior flyBehavior;
 
-    public Duck(String name, double weight) {
-        this.name = name;
-        this.weight = weight;
+    public Duck() {
     }
 
-    public String getName() {
-        return name;
+    public abstract void display();
+    public void performQuack(){
+        quackBehavior.quack();
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void performFly(){
+        flyBehavior.fly();
     }
 
     public void swim() {
         System.out.println("I'm swimming");
     }
 
-    public void display() {
-        System.out.printf("I'm %s\n", name);
-    }
 }
